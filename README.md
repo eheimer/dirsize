@@ -1,6 +1,12 @@
 # DirSize
 
-DirSize is a Rust utility that lists the contents of a specified directory along with their sizes. If the entry is a directory, it lists the total size of the directory. The output is sorted by increasing size. It is meant to be compiled and run from the command line to list directory contents and sizes. I use it to keep an eye on hard-disk space.
+DirSize is a Rust rewrite of a bash script that lists the contents of a specified directory along with their sizes.
+
+The original bash script is included in the `reference` directory.
+
+## Rust
+
+This is a personal exercise to begin learning Rust. Much of the code was generated with Copilot, tested and confirmed by me to be working as well or better than the original bash script on my linux machine.
 
 ## Usage
 
@@ -28,7 +34,7 @@ dirsize /path/to/directory
 
 ## Output
 
-The output will display the size of each file and directory in the specified directory, sorted by increasing size. Directories will be highlighted in blue.
+The output will display the size of each file and directory, sorted by increasing size. Directories will be highlighted in blue.
 
 ### Example Output
 
@@ -45,7 +51,7 @@ Total: 15K
 ## Notes
 
 - This utility has only been tested on Linux so far.
-- Symbolic links are ignored to avoid "too many levels of symbolic links" errors.
+- Symbolic links are ignored to speed up the execution.
 
 ## Dependencies
 
